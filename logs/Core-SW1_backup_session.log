@@ -1,0 +1,190 @@
+
+Core-SW1#
+Core-SW1#terminal width 511
+Core-SW1#terminal length 0
+Core-SW1#
+Core-SW1#
+Core-SW1#show running-config
+Building configuration...
+
+Current configuration : 3030 bytes
+!
+! Last configuration change at 23:59:01 UTC Sat Apr 18 2026 by admin
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname Core-SW1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition MGMT
+ rd 100:99
+ !
+ address-family ipv4
+ exit-address-family
+!
+enable secret 5 $1$WTU.$yhZLE6FA3r8X9NW5M5Xj./
+!
+username admin privilege 15 secret 5 $1$CE8R$t1uSmQGcmbq2cHnZXghYu1
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+ip domain-name hashem.com
+ip cef
+no ipv6 cef
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Ethernet0/0
+ description EXTERNAL-HSRP
+ no switchport
+ ip address 192.168.52.140 255.255.255.0
+ ip nat outside
+ standby version 2
+ standby 2 ip 192.168.52.100
+ standby 2 priority 110
+ standby 2 preempt
+ standby 2 authentication md5 key-string ********
+!
+interface Ethernet0/1
+ description LINK-TO-MGMT-SW
+ switchport access vlan 99
+ switchport mode access
+!
+interface Ethernet0/2
+ description TRUNK-TO-ACC-SW1
+ switchport trunk allowed vlan 10,20
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Ethernet0/3
+ description TRUNK-TO-ACC-SW2
+ switchport access vlan 99
+ switchport trunk allowed vlan 10,20
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Ethernet1/0
+ description LINK-TO-Core-SW2
+ no switchport
+ ip address 10.0.0.1 255.255.255.252
+!
+interface Ethernet1/1
+!
+interface Ethernet1/2
+!
+interface Ethernet1/3
+!
+interface Ethernet2/0
+!
+interface Ethernet2/1
+!
+interface Ethernet2/2
+!
+interface Ethernet2/3
+!
+interface Ethernet3/0
+!
+interface Ethernet3/1
+!
+interface Ethernet3/2
+!
+interface Ethernet3/3
+!
+interface Vlan10
+ description FINANCE-GATEWAY
+ ip address 10.10.10.2 255.255.255.0
+ standby version 2
+ standby 10 ip 10.10.10.1
+ standby 10 priority 110
+ standby 10 preempt
+!
+interface Vlan20
+ description ENGINEERING-GATEWAY
+ ip address 10.20.20.2 255.255.255.0
+ standby version 2
+ standby 20 ip 10.20.20.1
+ standby 20 priority 110
+ standby 20 preempt
+!
+interface Vlan99
+ description OOB-GATEWAY
+ vrf forwarding MGMT
+ ip address 10.99.99.12 255.255.255.0
+ ip nat inside
+ standby version 2
+ standby 1 ip 10.99.99.1
+ standby 1 priority 110
+ standby 1 preempt
+ standby 1 authentication md5 key-string ********
+!
+router ospf 1
+ router-id 1.1.1.1
+ passive-interface default
+ no passive-interface Ethernet1/0
+ network 10.0.0.0 0.0.0.3 area 0
+ network 10.10.10.0 0.0.0.255 area 0
+ network 10.20.20.0 0.0.0.255 area 0
+!
+ip nat inside source list 1 interface Ethernet0/0 vrf MGMT overload
+ip forward-protocol nd
+!
+ip http server
+ip http secure-server
+!
+ip route vrf MGMT 0.0.0.0 0.0.0.0 192.168.52.1
+ip ssh version 2
+ip ssh server algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+ip ssh client algorithm encryption aes128-ctr aes192-ctr aes256-ctr
+!
+!
+access-list 1 permit 10.99.99.0 0.0.0.255
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+ login local
+ transport input ssh
+!
+!
+!
+end
+
+Core-SW1#
+Core-SW1#
+Core-SW1#exit

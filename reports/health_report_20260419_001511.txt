@@ -1,0 +1,54 @@
+================================================================================
+NETWORK DEVICE HEALTH CHECK REPORT
+Generated: 2026-04-19 00:15:11
+================================================================================
+
+--- Unknown (Unknown) ---
+Serial Number : Unknown
+Software      : Cisco IOS Software, Linux Software (I86BI_LINUXL2-ADVENTERPR...
+Current Time  : *23:15:03.660 UTC Sat Apr 18 2026
+CPU           : CPU utilization for five seconds: 0%/0%; one minute: 0%; five minutes: 0%
+Memory        : Processor Pool Total:  943607216 Used:   57389768 Free:  886217448
+License       : ^
+% Invalid input detected at '^' marker.
+NTP Status    : %NTP is not enabled.
+SNMP Groups   : %SNMP agent not enabled
+Backup Status : No backup found for today
+
+Interface Descriptions (sample):
+  Interface                      Status         Protocol Description
+  Et0/0                          up             up       EXTERNAL-HSRP
+  Et0/1                          up             up       LINK-TO-MGMT-SW
+  Et0/2                          up             up       TRUNK-TO-ACC-SW1
+  Et0/3                          up             up       TRUNK-TO-ACC-SW2
+  Et1/0                          up             up       LINK-TO-Core-SW2
+  Et1/1                          up             up       
+  Et1/2                          up             up       
+  Et1/3                          up             up       
+  Et2/0                          up             up       
+----------------------------------------
+
+--- Unknown (Unknown) ---
+Serial Number : Unknown
+Software      : Cisco IOS Software, Linux Software (I86BI_LINUXL2-ADVENTERPR...
+Current Time  : *23:15:09.026 UTC Sat Apr 18 2026
+CPU           : CPU utilization for five seconds: 0%/0%; one minute: 0%; five minutes: 0%
+Memory        : Processor Pool Total:  943607216 Used:   57387472 Free:  886219744
+License       : ^
+% Invalid input detected at '^' marker.
+NTP Status    : %NTP is not enabled.
+SNMP Groups   : %SNMP agent not enabled
+Backup Status : No backup found for today
+
+Interface Descriptions (sample):
+  Interface                      Status         Protocol Description
+  Et0/0                          up             up       EXTERNAL-HSRP
+  Et0/1                          up             up       TRUNK-TO-ACC-SW1
+  Et0/2                          up             up       TRUNK-TO-ACC-SW2
+  Et0/3                          up             up       LINK-TO-MGMT-SW
+  Et1/0                          up             up       LINK-TO-Core-SW1
+  Et1/1                          up             up       
+  Et1/2                          up             up       
+  Et1/3                          up             up       
+  Et2/0                          up             up       
+----------------------------------------

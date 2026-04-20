@@ -1,0 +1,226 @@
+2026-04-18 17:47:49,852 - INFO - Loaded 4 devices.
+2026-04-18 17:47:57,367 - ERROR - Deploy failed for Core-SW1: BaseConnection.__init__() got an unexpected keyword argument 'hostname'
+2026-04-18 17:47:57,367 - ERROR - Backup failed for Core-SW1: BaseConnection.__init__() got an unexpected keyword argument 'hostname'
+2026-04-18 17:47:57,368 - ERROR - Deploy failed for Core-SW2: BaseConnection.__init__() got an unexpected keyword argument 'hostname'
+2026-04-18 17:47:57,368 - ERROR - Backup failed for Core-SW2: BaseConnection.__init__() got an unexpected keyword argument 'hostname'
+2026-04-18 17:47:57,369 - ERROR - Deploy failed for ACC-SW1: BaseConnection.__init__() got an unexpected keyword argument 'hostname'
+2026-04-18 17:47:57,369 - ERROR - Backup failed for ACC-SW1: BaseConnection.__init__() got an unexpected keyword argument 'hostname'
+2026-04-18 17:47:57,370 - ERROR - Deploy failed for ACC-SW2: BaseConnection.__init__() got an unexpected keyword argument 'hostname'
+2026-04-18 17:47:57,370 - ERROR - Backup failed for ACC-SW2: BaseConnection.__init__() got an unexpected keyword argument 'hostname'
+2026-04-18 18:01:15,598 - INFO - Loaded 4 devices.
+2026-04-18 18:01:19,774 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 18:01:20,632 - INFO - Authentication (password) successful!
+2026-04-18 18:01:37,958 - ERROR - Deploy failed for Core-SW1: 
+
+Pattern not detected: '(?:Core\\-SW1.*$|#.*$)' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2026-04-18 18:01:47,967 - ERROR - Backup failed for Core-SW1: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.52.140:22
+
+
+2026-04-18 18:01:47,988 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 18:01:48,621 - INFO - Authentication (password) successful!
+2026-04-18 18:02:05,035 - ERROR - Deploy failed for Core-SW2: 
+
+Pattern not detected: '(?:Core\\-SW2.*$|#.*$)' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2026-04-18 18:02:15,049 - ERROR - Backup failed for Core-SW2: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.52.145:22
+
+
+2026-04-18 18:02:35,067 - ERROR - Backup failed for ACC-SW1: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.99.14:22
+
+
+2026-04-18 18:02:55,091 - ERROR - Backup failed for ACC-SW2: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.99.15:22
+
+
+2026-04-18 18:18:21,240 - INFO - Loaded 4 devices.
+2026-04-18 18:18:23,996 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 18:18:24,640 - INFO - Authentication (password) successful!
+2026-04-18 18:18:40,875 - ERROR - Deploy failed for Core-SW1: 
+
+Pattern not detected: '(?:Core\\-SW1.*$|#.*$)' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2026-04-18 18:18:50,879 - ERROR - Backup failed for Core-SW1: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.52.140:22
+
+
+2026-04-18 18:18:50,896 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 18:18:51,844 - INFO - Authentication (password) successful!
+2026-04-18 18:19:08,186 - ERROR - Deploy failed for Core-SW2: 
+
+Pattern not detected: '(?:Core\\-SW2.*$|#.*$)' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2026-04-18 18:19:18,202 - ERROR - Backup failed for Core-SW2: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.52.145:22
+
+
+2026-04-18 18:19:38,232 - ERROR - Backup failed for ACC-SW1: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.99.14:22
+
+
+2026-04-18 18:19:58,252 - ERROR - Backup failed for ACC-SW2: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.99.15:22
+
+
+2026-04-18 21:06:08,332 - INFO - Loaded 2 devices.
+2026-04-18 21:08:05,832 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:08:06,406 - INFO - Authentication (password) successful!
+2026-04-18 21:08:27,932 - ERROR - Deploy failed for Core-SW1: 
+Pattern not detected: '\\(config\\)#' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2026-04-18 21:08:27,982 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:08:28,522 - INFO - Authentication (password) successful!
+2026-04-18 21:08:30,913 - INFO - Backup successful for Core-SW1
+2026-04-18 21:08:30,972 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:08:31,522 - INFO - Authentication (password) successful!
+2026-04-18 21:08:53,084 - ERROR - Deploy failed for Core-SW2: 
+Pattern not detected: '\\(config\\)#' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2026-04-18 21:08:53,152 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:08:53,693 - INFO - Authentication (password) successful!
+2026-04-18 21:08:56,099 - INFO - Backup successful for Core-SW2
+2026-04-18 21:20:23,911 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:20:24,476 - INFO - Authentication (password) successful!
+2026-04-18 21:20:41,777 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:20:42,307 - INFO - Authentication (password) successful!
+2026-04-18 21:20:44,168 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:20:44,697 - INFO - Authentication (password) successful!
+2026-04-18 21:21:01,427 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:21:02,027 - INFO - Authentication (password) successful!
+2026-04-18 21:39:58,991 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:40:00,445 - INFO - Authentication (password) successful!
+2026-04-18 21:40:14,860 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:40:15,524 - INFO - Authentication (password) successful!
+2026-04-18 21:40:17,474 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:40:18,135 - INFO - Authentication (password) successful!
+2026-04-18 21:40:35,677 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:40:36,886 - INFO - Authentication (password) successful!
+2026-04-18 21:43:30,009 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:43:30,543 - INFO - Authentication (password) successful!
+2026-04-18 21:43:43,685 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:43:44,197 - INFO - Authentication (password) successful!
+2026-04-18 21:43:46,044 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:43:46,577 - INFO - Authentication (password) successful!
+2026-04-18 21:43:59,614 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:44:00,155 - INFO - Authentication (password) successful!
+2026-04-18 21:47:56,148 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:47:56,699 - INFO - Authentication (password) successful!
+2026-04-18 21:48:09,838 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:48:10,448 - INFO - Authentication (password) successful!
+2026-04-18 21:48:12,331 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:48:12,907 - INFO - Authentication (password) successful!
+2026-04-18 21:48:26,282 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:48:26,973 - INFO - Authentication (password) successful!
+2026-04-18 21:53:44,400 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:53:45,218 - INFO - Authentication (password) successful!
+2026-04-18 21:53:58,245 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:53:58,989 - INFO - Authentication (password) successful!
+2026-04-18 21:54:00,850 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:54:01,590 - INFO - Authentication (password) successful!
+2026-04-18 21:54:14,604 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-18 21:54:15,175 - INFO - Authentication (password) successful!
+2026-04-19 00:58:48,331 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-19 00:58:49,243 - INFO - Authentication (password) successful!
+2026-04-19 00:59:03,262 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-19 00:59:04,065 - INFO - Authentication (password) successful!
+2026-04-19 00:59:06,017 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-19 00:59:06,616 - INFO - Authentication (password) successful!
+2026-04-19 00:59:20,188 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-04-19 00:59:20,777 - INFO - Authentication (password) successful!

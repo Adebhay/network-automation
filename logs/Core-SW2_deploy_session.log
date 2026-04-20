@@ -1,0 +1,104 @@
+
+Core-SW2#
+Core-SW2#terminal width 511
+Core-SW2#terminal length 0
+Core-SW2#
+Core-SW2#
+Core-SW2#
+Core-SW2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Core-SW2(config)#
+Core-SW2(config)#
+Core-SW2(config)#vrf definition MGMT
+Core-SW2(config-vrf)# rd 100:99
+Core-SW2(config-vrf)# address-family ipv4
+Core-SW2(config-vrf-af)# exit
+Core-SW2(config-vrf)#vlan 10
+Core-SW2(config-vlan)# name USER-FINANCE
+Core-SW2(config-vlan)#vlan 20
+Core-SW2(config-vlan)# name USER-ENGINEERING
+Core-SW2(config-vlan)#vlan 99
+Core-SW2(config-vlan)# name OOB-MGMT
+Core-SW2(config-vlan)#interface Ethernet0/0
+Core-SW2(config-if)# description EXTERNAL-HSRP
+Core-SW2(config-if)# no switchport
+Core-SW2(config-if)# ip address 192.168.52.145 255.255.255.0
+Core-SW2(config-if)# standby version 2
+Core-SW2(config-if)# standby 2 ip 192.168.52.100
+Core-SW2(config-if)# standby 2 priority 100
+Core-SW2(config-if)# standby 2 preempt
+Core-SW2(config-if)# standby 2 authentication md5 key-string ********
+Core-SW2(config-if)# no shutdown
+Core-SW2(config-if)#interface Ethernet0/3
+Core-SW2(config-if)# description LINK-TO-MGMT-SW
+Core-SW2(config-if)# switchport mode access
+Core-SW2(config-if)# switchport access vlan 99
+Core-SW2(config-if)# no shutdown
+Core-SW2(config-if)#interface Vlan99
+Core-SW2(config-if)# description OOB-GATEWAY
+Core-SW2(config-if)# vrf forwarding MGMT
+Core-SW2(config-if)# ip address 10.99.99.13 255.255.255.0
+Core-SW2(config-if)# standby version 2
+Core-SW2(config-if)# standby 1 ip 10.99.99.1
+Core-SW2(config-if)# standby 1 priority 100
+Core-SW2(config-if)# standby 1 preempt
+Core-SW2(config-if)# standby 1 authentication md5 key-string ********
+Core-SW2(config-if)# no shutdown
+Core-SW2(config-if)#interface Vlan10
+Core-SW2(config-if)# description FINANCE-GATEWAY
+Core-SW2(config-if)# ip address 10.10.10.3 255.255.255.0
+Core-SW2(config-if)# standby version 2
+Core-SW2(config-if)# standby 10 ip 10.10.10.1
+Core-SW2(config-if)# standby 10 priority 100
+Core-SW2(config-if)# standby 10 preempt
+Core-SW2(config-if)# no shutdown
+Core-SW2(config-if)#interface Vlan20
+Core-SW2(config-if)# description ENGINEERING-GATEWAY
+Core-SW2(config-if)# ip address 10.20.20.3 255.255.255.0
+Core-SW2(config-if)# standby version 2
+Core-SW2(config-if)# standby 20 ip 10.20.20.1
+Core-SW2(config-if)# standby 20 priority 100
+Core-SW2(config-if)# standby 20 preempt
+Core-SW2(config-if)# no shutdown
+Core-SW2(config-if)#interface Ethernet0/1
+Core-SW2(config-if)# description TRUNK-TO-ACC-SW1
+Core-SW2(config-if)# switchport trunk encapsulation dot1q
+Core-SW2(config-if)# switchport mode trunk
+Core-SW2(config-if)# switchport trunk allowed vlan 10,20
+Core-SW2(config-if)# no shutdown
+Core-SW2(config-if)#interface Ethernet0/2
+Core-SW2(config-if)# description TRUNK-TO-ACC-SW2
+Core-SW2(config-if)# switchport trunk encapsulation dot1q
+Core-SW2(config-if)# switchport mode trunk
+Core-SW2(config-if)# switchport trunk allowed vlan 10,20
+Core-SW2(config-if)# no shutdown
+Core-SW2(config-if)#interface Ethernet1/0
+Core-SW2(config-if)# description LINK-TO-Core-SW1
+Core-SW2(config-if)# no switchport
+Core-SW2(config-if)# ip address 10.0.0.2 255.255.255.252
+Core-SW2(config-if)# no shutdown
+Core-SW2(config-if)#router ospf 1
+Core-SW2(config-router)# router-id 2.2.2.2
+Core-SW2(config-router)# network 10.0.0.0 0.0.0.3 area 0
+Core-SW2(config-router)# network 10.10.10.0 0.0.0.255 area 0
+Core-SW2(config-router)# network 10.20.20.0 0.0.0.255 area 0
+Core-SW2(config-router)# passive-interface default
+Core-SW2(config-router)# no passive-interface Ethernet1/0
+Core-SW2(config-router)#ip route vrf MGMT 0.0.0.0 0.0.0.0 192.168.52.1
+Core-SW2(config)#interface Ethernet0/0
+Core-SW2(config-if)# ip nat outside
+Core-SW2(config-if)#interface Vlan99
+Core-SW2(config-if)# ip nat inside
+Core-SW2(config-if)#access-list 1 permit 10.99.99.0 0.0.0.255
+Core-SW2(config)#ip nat inside source list 1 interface Ethernet0/0 vrf MGMT overload
+Core-SW2(config)#
+Core-SW2(config)#end
+Core-SW2#
+Core-SW2#
+Core-SW2#
+Core-SW2#
+Core-SW2#write mem
+Building configuration...
+Compressed configuration from 2905 bytes to 1697 bytes[OK]
+Core-SW2#
+Core-SW2#exit
