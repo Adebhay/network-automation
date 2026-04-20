@@ -1,1 +1,4 @@
 /devices.csv
+hostname,ip,device_type,username,password,secret,port
+Core-SW1,192.168.52.140,cisco_ios,admin,Ha-Shem123,Ha-Shem123,22
+Core-SW2,192.168.52.145,cisco_ios,admin,Ha-Shem123,Ha-Shem123,22
